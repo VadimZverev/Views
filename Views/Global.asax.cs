@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Optimization;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Views.Infrastructure;
 
 namespace Views
 {
@@ -13,9 +9,11 @@ namespace Views
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            ViewEngines.Engines.Add(new DebugDataViewEngine());
+
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
