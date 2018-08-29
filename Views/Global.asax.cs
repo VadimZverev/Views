@@ -10,6 +10,7 @@ namespace Views
         {
             AreaRegistration.RegisterAllAreas();
 
+            ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new DebugDataViewEngine());
 
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
